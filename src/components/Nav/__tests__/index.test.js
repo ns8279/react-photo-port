@@ -18,3 +18,13 @@ describe('Nav Component', () => {
         expect(asFragment()).toMatchSnapshot();
     });
 });
+
+//tests  to check the emoji visibility
+describe('Emoji visibility', () => {
+    it('inserts emoji to the h2', () => {
+        //Arrange
+        const { getByLabelText } = render(<Nav />);
+        //Assert
+        expect(getByLabelText('camera')).toHaveTextContent('📸');
+    });
+})
